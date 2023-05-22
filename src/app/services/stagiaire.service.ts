@@ -10,17 +10,17 @@ const URL="http://localhost:3000/etudstag";
 export class StagiaireService {
 
   constructor( private http:HttpClient) { }
-  getDepensess():Observable<any>{
+  getStagiaire():Observable<any>{
     return this.http.get<any>(URL);
   }
-  addDepensess(d:Stagiaire):Observable<Stagiaire>{
+  addStagiaire(d:Stagiaire):Observable<Stagiaire>{
     return this.http.post<Stagiaire>(URL, d)
   }
 
-  updateDepenses(id:number,d:Stagiaire){
+  updateStagiaire(id:number,d:Stagiaire){
     return this.http.put<Stagiaire>(URL+"/"+id ,d)
   }
-  deleteDepenses(id : number){
+  deleteStagiaire(id : number){
     return this.http.delete(`${URL}/${id}`);
   }
 }
