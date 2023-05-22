@@ -11,17 +11,17 @@ const URL="http://localhost:3000/societe";
 export class SocieteService {
 
   constructor( private http:HttpClient) { }
-  getDepensess():Observable<any>{
+  getSociete():Observable<any>{
     return this.http.get<any>(URL);
   }
-  addDepensess(d:Societe):Observable<Societe>{
+  addSociete(d:Societe):Observable<Societe>{
     return this.http.post<Societe>(URL, d)
   }
 
-  updateDepenses(id:number,d:Societe){
+  updateSociete(id:number,d:Societe){
     return this.http.put<Societe>(URL+"/"+id ,d)
   }
-  deleteDepenses(id : number){
+  deleteSociete(id : number){
     return this.http.delete(`${URL}/${id}`);
   }
 }

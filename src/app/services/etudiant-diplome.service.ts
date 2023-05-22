@@ -10,17 +10,17 @@ const URL="http://localhost:3000/etuddip";
 export class EtudiantDiplomeService {
 
   constructor( private http:HttpClient) { }
-  getDepensess():Observable<any>{
+  getDiplome():Observable<any>{
     return this.http.get<any>(URL);
   }
-  addDepensess(d:EtudiantDiplome):Observable<EtudiantDiplome>{
+  addDiplome(d:EtudiantDiplome):Observable<EtudiantDiplome>{
     return this.http.post<EtudiantDiplome>(URL, d)
   }
 
-  updateDepenses(id:number,d:EtudiantDiplome){
+  updateDiplome(id:number,d:EtudiantDiplome){
     return this.http.put<EtudiantDiplome>(URL+"/"+id ,d)
   }
-  deleteDepenses(id : number){
+  deleteDiplome(id : number){
     return this.http.delete(`${URL}/${id}`);
   }
 }

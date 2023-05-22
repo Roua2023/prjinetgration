@@ -10,17 +10,17 @@ const URL="http://localhost:3000/offre";
 export class OffreService {
 
   constructor( private http:HttpClient) { }
-  getDepensess():Observable<any>{
+  getOffre():Observable<any>{
     return this.http.get<any>(URL);
   }
-  addDepensess(d:Offre):Observable<Offre>{
+  addOffre(d:Offre):Observable<Offre>{
     return this.http.post<Offre>(URL, d)
   }
 
-  updateDepenses(id:number,d:Offre){
+  updateOffre(id:number,d:Offre){
     return this.http.put<Offre>(URL+"/"+id ,d)
   }
-  deleteDepenses(id : number){
+  deleteOffre(id : number){
     return this.http.delete(`${URL}/${id}`);
   }
 }
