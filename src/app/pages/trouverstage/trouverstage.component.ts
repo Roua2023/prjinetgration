@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Offre } from 'src/app/classes/offre';
+import { OffreService } from 'src/app/services/offre.service';
 
 @Component({
   selector: 'app-trouverstage',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrouverstageComponent implements OnInit {
 
-  constructor() { }
+  lesoffres: Offre[]=[];
+  constructor(private OffreService:OffreService) { }
 
   ngOnInit(): void {
+
+    this.OffreService.getOffre()
+    .subscribe(
+      data => this.lesoffres = data
+    )
   }
 
 }

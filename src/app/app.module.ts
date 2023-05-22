@@ -8,6 +8,12 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { TrouverstageComponent } from './pages/trouverstage/trouverstage.component';
 import { TrouverstagieresComponent } from './pages/trouverstagieres/trouverstagieres.component';
 import{ HttpClientModule} from '@angular/common/http';
+import { DetailsoffreComponent } from './components/detailsoffre/detailsoffre.component';
+import { EtudiantDiplomeComponent } from './pages/etudiant-diplome/etudiant-diplome.component';
+import { SocieteComponent } from './pages/societe/societe.component';
+import { AjouteroffreComponent } from './components/ajouteroffre/ajouteroffre.component';
+import { EtudiantdiplomeComponent } from './components/etudiantdiplome/etudiantdiplome.component';
+import { EtudiantstagiairComponent } from './components/etudiantstagiair/etudiantstagiair.component';
 
 
 @NgModule({
@@ -16,7 +22,13 @@ import{ HttpClientModule} from '@angular/common/http';
     AcceuilComponent,
     AboutusComponent,
     TrouverstageComponent,
-    TrouverstagieresComponent
+    TrouverstagieresComponent,
+    DetailsoffreComponent,
+    EtudiantDiplomeComponent,
+    SocieteComponent,
+    AjouteroffreComponent,
+    EtudiantdiplomeComponent,
+    EtudiantstagiairComponent
   ],
   imports: [
     BrowserModule,
