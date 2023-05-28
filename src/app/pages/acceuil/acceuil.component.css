@@ -1,7 +1,5 @@
-/*
-Template 2040 Blue Arc
-http://www.tooplate.com/view/2040-blue-arc
-*/
+
+
 
 body {
 	margin: 0;
@@ -138,7 +136,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	padding: 0 5px;
 }
 
-/* menu */
+/* menu 
 
 #tooplate_menu {
 	float: right;
@@ -189,41 +187,22 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	text-shadow: 1px 1px 1px #000;
 }
 
-/* end of menu */
+end of menu */
 
 #tooplate_header {
 	clear: both;
-	width: 988px;
-	height: 12rem;
-	text-align: center;
+	width: 900px;
+	margin-left: 70px;
+	height: 13rem;
+	
 	background: url(../../../assets/images/logolvcf.png) no-repeat top;
 }
-
-#site_title { 
-	width: 227px; 
-	margin: 0 auto; 
-}
-
-#site_title h1 { 
-	margin: 0; 
-	padding: 0; 
-}
-
-#site_title h1 a { 
-	display: block; 
-	width: 227px; 
-	height: 61px; 
-	color: #fff; 
-	outline: none; 
-	text-indent: -10000px; 
-	/*background: url(../../../assets/images/tooplate_logo.png) no-repeat top left;*/ 
-}
-
 /* end of menu */
 
 #tooplate_middle { 
+	margin-bottom: 3%;
 	clear: both;
-	width: 900px;
+	width: 988px;
 	height: 400px;
 	padding: 100px 94px;
 	overflow: hidden;
@@ -231,11 +210,13 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 }
 
 #mid_title { 
-	font-size: 34px; 
+	font-size: 45px; 
 	font-weight: 400; 
 	color: #dceffc; 
 	margin-bottom: 20px; 
 	text-shadow: 1px 1px 3px #000; 
+	text-align: center;
+	margin-left: 5%;
 }
 
 #tooplate_middle p {
@@ -244,6 +225,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	color: #ccc;
 	line-height: 30px;
 	margin-bottom: 20px;
+	margin-left: 10%;
 }
 
 /* main */
@@ -253,9 +235,10 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	width: 960px;
 	padding: 0 14px;
 	margin: 0;
+	
 }
 
-.col_w960 { width: 960px; margin-bottom: 60px }
+.col_w960 { width: 960px; margin-bottom: 60px;}
 .col_w600 { width: 600px }
 .col_w450 { width: 450px }
 .col_w300 { width: 300px }
@@ -504,4 +487,18 @@ margin-top: 15px;
 #tooplate_footer a {
 	font-weight: normal;
 	color: #fff;
+}
+.inscrit{
+
+	width: 100px;
+	height: 80px;
+	margin-left: 30%;
+}
+.icon{
+	text-align: center;
+}
+
+.content{
+	width: 200px;
+	margin-left: 15%;
 }

@@ -14,6 +14,7 @@ import { SocieteComponent } from './pages/societe/societe.component';
 import { AjouteroffreComponent } from './components/ajouteroffre/ajouteroffre.component';
 import { EtudiantdiplomeComponent } from './components/etudiantdiplome/etudiantdiplome.component';
 import { EtudiantstagiairComponent } from './components/etudiantstagiair/etudiantstagiair.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { EtudiantstagiairComponent } from './components/etudiantstagiair/etudian
     SocieteComponent,
     AjouteroffreComponent,
     EtudiantdiplomeComponent,
-    EtudiantstagiairComponent
+    EtudiantstagiairComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
