@@ -9,14 +9,24 @@ import { SocieteService } from 'src/app/services/societe.service';
 })
 export class SocieteComponent implements OnInit {
 
-  lessociete:Societe[]=[];
+  lessocietes:Societe[]=[];
   constructor(private societeService:SocieteService) { }
 
   ngOnInit(): void {
-    this.societeService.getSociete()
-    .subscribe(
-      data => this.lessociete = data
-    )
+    
+  this.societeService.getSociete()
+  .subscribe(
+    
+        (data: any) => {
+          this.lessocietes= data.societes;
+          console.log(this.lessocietes);
+        },
+        error => {
+          console.log('Une erreur s\'est produite lors de la récupération des societes : ', error);
+        }
+      );
   }
+
+
 
 }

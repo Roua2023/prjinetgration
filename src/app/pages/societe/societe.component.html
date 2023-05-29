@@ -8,19 +8,17 @@
         </div>
       </div>
     </div>
-    <div style="height: 50px;">
-      <div class="card">
+    <div class="cardcontainer">
+      <div class="card" *ngFor="let sc of lessocietes">
           <div class="card-header">
-            <img src="../../../assets/images/actia.png" width="270px" height="160px"/>
+            <img src="#" width="270px" height="160px" alt="logo societe"/>
           </div>
           <div class="card-body">
-              <h2>Nom Entreprise XYZ</h2>
-            <p>Description de l'entreprise</p>
-            <p class="duration">type</p>
-            <p class="location">(address)Ville, Pays</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at imperdiet massa. Vivamus varius ante euismod, consequat lorem vel, dapibus eros. Aenean vel velit libero. </p>
+              <h2>{{sc.Nom}}</h2>
+            <p>{{sc.Email}}</p>
+            <p class="location">Address:{{sc.Adresse}}</p>
+            <p class="description">{{sc.Activite}} </p>
           </div>
       </div>
     </div>
   </div>
-{{lessociete|json}}

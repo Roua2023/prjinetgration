@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./acceuil.component.css']
 })
 export class AcceuilComponent implements OnInit {
-
+  typeInscription: string = '';
   constructor() { }
 
   ngOnInit(): void {
-  }
+    
 
+  }
+select(){
+  console.log(this.typeInscription);
+}
 }

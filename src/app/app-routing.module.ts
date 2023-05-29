@@ -8,6 +8,13 @@ import { DetailsoffreComponent } from './components/detailsoffre/detailsoffre.co
 import { EtudiantDiplomeComponent } from './pages/etudiant-diplome/etudiant-diplome.component';
 import { SocieteComponent } from './pages/societe/societe.component';
 import { AjouteroffreComponent } from './components/ajouteroffre/ajouteroffre.component';
+import { ConseilsComponent } from './pages/conseils/conseils.component';
+import { LoginComponent } from './pages/login/login.component';
+import { InscripSCComponent } from './components/inscrip-sc/inscrip-sc.component';
+import { InscripEtudiantSTComponent } from './components/inscrip-etudiant-st/inscrip-etudiant-st.component';
+import { InscripEtudiantDipComponent } from './components/inscrip-etudiant-dip/inscrip-etudiant-dip.component';
+import { Error404Component } from './pages/error404/error404.component';
+import { CarousselbootComponent } from './components/carousselboot/carousselboot.component';
 
 const routes: Routes = [
 
@@ -16,10 +23,19 @@ const routes: Routes = [
   {path:'trouverstage',component:TrouverstageComponent},
   {path:'trouverstagieres',component:TrouverstagieresComponent},
   {path:'aboutus',component:AboutusComponent},
-  {path:'detailsoffre',component:DetailsoffreComponent},
+  { path: 'details-offre/:id', component:DetailsoffreComponent },
   {path:'trouveremploye',component:EtudiantDiplomeComponent},
   {path:'entreprise',component:SocieteComponent},
-  {path:'ajouteroffre',component:AjouteroffreComponent}
+  {path:'ajouteroffre',component:AjouteroffreComponent},
+  {path:'conseils',component:ConseilsComponent},
+  {path:'login',component:LoginComponent},
+  {path:'inscripsc',component:InscripSCComponent},
+  {path:'inscripets',component:InscripEtudiantSTComponent},
+  {path:'inscripedip',component:InscripEtudiantDipComponent},
+  {path:'carousselboot',component:CarousselbootComponent},
+  { path:'**', component:Error404Component}
+
+
 
 
 ];

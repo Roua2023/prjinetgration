@@ -1,12 +1,14 @@
 
 .header {
-    background-color: #4682b4;
-    padding: 200px;
+    background-color: #191970;
+    padding: 80px;
     text-align: center;
-    height: 20rem;
+    height: 10rem;
+    font-size: 15px;
 
 
   }
+ 
   #design{
     position: absolute;
    margin-left: 0%;
@@ -14,7 +16,7 @@
     width: 50px;
     height: 80px;
   }
-.body{
+.body2{
   position: relative;
     margin-bottom: 0px;
     margin-top:none;
@@ -45,3 +47,20 @@ width:400px;
 width:600px;
  height:250px;
   }
+
+  .body{
+    margin: 0;
+    padding: 0;
+    
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 13px;
+    line-height: 1.7rem; 
+   color: black;
+   font-weight: bold;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #191970;
+    background-image: url(../../../assets/images/tooplate_body.jpg);
+    background-repeat: repeat-x;
+    background-position: top;
+  }
+  

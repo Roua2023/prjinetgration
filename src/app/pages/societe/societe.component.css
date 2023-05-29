@@ -4,16 +4,28 @@
     text-align: center;
     height: 10rem;
   }
-  .card {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin: 20px;
-    overflow: hidden;
-    width: 300px;
+  .cardcontainer{
+    margin-top: 5%;
+    height:900px;
+    background-color:  #ff8c00;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  
+    .card {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      margin: 5px;
+      overflow: hidden;
+      width: 300px;
+      height: 380px;
+      color:#0a1425;
+    }
+    .card:hover {
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Updated box shadow properties on hover */
+    }
   .card-header {
-    background-color: #f2f2f2;
+    background-color: #add8e6;
     text-align: center;
     padding: 20px;
   }
@@ -22,7 +34,18 @@
     font-size: 24px;
     margin: 0;
   }
+  .description {
+    font-size: 12px; /* Taille de police */
+    font-weight: bold; /* Gras */
+    color: #03154a; /* Couleur du texte */
+    margin-bottom: 10px; /* Marge inférieure */
+    text-transform: lowercase; /* Ajout d'une ombre */
+    transition: transform 0.3s ease; /* Ajout de transition pour l'effet d'attraction */
+  }
   
+  .description:hover {
+    transform: scale(1.07); /* Effet d'attraction - légèrement agrandir l'élément */
+  }
   .card-header p {
     font-size: 16px;
     margin: 5px 0 0;
@@ -30,6 +53,13 @@
   
   .card-body {
     padding: 20px;
+  }
+  .card-body h2 {
+    font-size: 24px; /* Taille de police */
+    font-weight: bold; /* Gras */
+    color: #17075f; /* Couleur du texte */
+    margin-bottom: 10px; /* Marge inférieure */
+    text-transform: uppercase; /* Texte en majuscules */
   }
   
   .duration {

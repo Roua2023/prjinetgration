@@ -25,18 +25,33 @@ http://www.tooplate.com/view/2040-blue-arc
             <li class="last"><a href="/aboutus">About Us</a></li>
         </ul>    	
     </div> end of tooplate_menu -->
-	<div id="tooplate_header">
-          <!-- <img src="images/tooplate_bc_blue.png" alt="Image" /> -->  
-    </div> <!-- end of header -->
-    
-    <div id="tooplate_middle">
+    <div class="liste">
+        <select class="custom-select form-select-lg mb-5" [(ngModel)]="typeInscription" (click)="select()">
+          <option value="default" selected  disabled>S'inscrire en tant qu'</option>
+          <option value="etudiant">Étudiant</option>
+          <option value="etudiantDiplome">Étudiant diplômé</option>
+          <option value="societe">Société</option>
+        </select>
+      </div>
+      
+      <div id="tooplate_middle">
     	<div id="mid_title">
-        	Welcome to LVC!	
+        	Bienvenue sur `Lancez votre carrière`!
         </div>
-        <p>informations pratiques pour trouver votre stage et le réussir !
-            Nos recommandation pour sélectionner une entreprise et bien préparer votre entretien. Nos astuces pour un bon déroulement de votre période en entreprise. Nos conseils pour passer de stagiair(e) à employé(e).</p>
+        <p> Notre plateforme est dédiée à vous aider à trouver des opportunités de stages et d'emploi pour propulser votre carrière vers de nouveaux sommets.</p>
     </div> <!-- end of middle -->
+     
+	
+    <!-- end of header -->
     
+    
+    <div id="tooplate_header">
+        <!--<app-carousselboot></app-carousselboot>-->
+          <!-- <img src="images/tooplate_bc_blue.png" alt="Image" /> -->  
+          <video src="../../../assets/images/course-video.mp4" autoplay loop muted></video>
+          
+          
+    </div> 
     <div id="tooplate_main">
     	<div class="col_w960">
               <div class="col_allw300 frontpage_box">
@@ -45,37 +60,41 @@ http://www.tooplate.com/view/2040-blue-arc
                         <div class="icon" >
                             <i class="fa-solid fa-building fa-fade fa-2xl" ></i>
                         </div>
+                        <br>
                         <h2 style="margin-top: 15%;">Entreprises</h2>
                     </div><br>
                     <div class="content">
                         <p>Inscrivez-vous gratuitement pour déposer vos offres de stages.</p><br>
-                        <a style="margin-left: 25%;" class="more" href="#">More</a>
+                        <a style="margin-left: 25%;" class="more" routerLink="/inscripsc">Infos</a>
+                       
                     </div>
                 </div>
                 <div class="col_allw300 frontpage_box">
                      <!--<img src="images/tooplate_bc_green.png" alt="Image" />-->
-                     <div class="inscrit">
+                     <div class="inscrit" >
                         <div class="icon" >
                             <i class="fa-solid fa-graduation-cap fa-fade fa-2xl"></i>
-                            <h2 style="margin-top: 15%;">Etudiants</h2>
+                            <br><br>
+                            <h2 style="margin-top: 10%;">Etudiants</h2>
                         </div>
                      </div><br>
                      <div class="content">
                         <p>Créez gratuitement votre compte et  chercher un offre de stage ou d'emploi.</p>
-                        <a style="margin-left: 25%;" class="more" href="#">More</a>
+                        <a style="margin-left: 25%;" class="more" routerLink="/inscripets">Infos</a>
                     </div>
                 </div>
                 <div class="col_allw300 frontpage_box col_last">
                      <!--<img src="images/tooplate_bc_orange.png" alt="Image" />-->
                      <div class="inscrit">
                         <div class="icon" >
-                            <i class="fa-sharp fa-solid fa-file-circle-question fa-fade fa-2xl"></i>          
-                            <h2 style="margin-top: 15%;">Nos Conseils</h2>
+                            <i class="fa-sharp fa-solid fa-file-circle-question fa-fade fa-2xl"></i>  
+                            <br><br>
+                            <h2 style="margin-top: 10%;"><span>Nos Conseils</span></h2>
                         </div>
-                     </div><br>
+                     </div><br><br>
                      <div class="content">
                         <p>Pour rédiger  un cv et une lettre de motivation,réussir l'entretien et le choix de stage.</p>
-                        <a style="margin-left: 25%;" class="more" href="#">More</a>
+                        <a style="margin-left: 25%;" class="more" routerLink="/conseils">Infos</a>
                      </div>
                 </div>
                 <div class="cleaner"></div>
@@ -92,7 +111,7 @@ http://www.tooplate.com/view/2040-blue-arc
                         <li><a href="#"><img width="200" height="100" src="../../../assets/images/Vermeg.jpg" alt="image" /></a></li>
                     </ul>    
                     <div class="cleaner"></div>
-                    <a class="more" href="#">More</a>
+                    <a class="more" routerLink="/entreprise">Infos</a>
                 </div>
                 
                 <div class="col_w450 float_r">
@@ -118,7 +137,7 @@ http://www.tooplate.com/view/2040-blue-arc
                         </div>
                         <div class="cleaner"></div>
                     </div>
-                    <a class="more" href="#">More</a>
+                    <a class="more" href="#">Infos</a>
                 </div>
                 
                 
@@ -128,13 +147,13 @@ http://www.tooplate.com/view/2040-blue-arc
     </div> <!-- end of main -->
     
 </div> <!-- end of wrapper -->
-
+<!--
 <div id="tooplate_footer_wrapper">
     <div id="tooplate_footer">
     
         Copyright © 2048 <a href="#">Lvc.tn</a> 
-    </div> <!-- end of tooplate_footer -->
-</div>
+    </div>  end of tooplate_footer 
+</div>-->
 
 </body>
 </html>

@@ -13,19 +13,32 @@
 .header {
   padding: 20px;
   text-align: center;
-  height: 7rem;
+  height: 11rem;
  
 }
-.card {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  margin: 100px;
-  overflow: hidden;
-  width: 300px;
+.cardcontainer{
+  margin-top: 5%;
+  height:900px;
+  background-color:  #ff8c00;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
+  .card {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 5px;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+  }
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* Updated box shadow properties on hover */
+  }
+  
 
 .card-header {
-  background-color: #f2f2f2;
+  background-color: #add8e6;
   text-align: center;
   padding: 20px;
 }
@@ -64,21 +77,21 @@
 
   .btn {
     display: block;
-    background-color: #ff6f61;
+    background-color:blue;
     color: #fff;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
   .btn:hover {
-    background-color: #e55649;
+    background-color:#add8e6;
+    color:blue;
+    transform: scale(1.1);
   }
-
-
   h1{
     font-family: 'Nunito';
     width: 21%;

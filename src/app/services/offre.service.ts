@@ -16,6 +16,10 @@ export class OffreService {
   addOffre(d:Offre):Observable<Offre>{
     return this.http.post<Offre>(URL, d)
   }
+  getOffreById(id:number):Observable<Offre>{
+    return this.http.get<Offre>(URL+"/"+ id);
+  }
+ 
 
   updateOffre(id:number,d:Offre){
     return this.http.put<Offre>(URL+"/"+id ,d)

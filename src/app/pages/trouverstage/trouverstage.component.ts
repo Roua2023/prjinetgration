@@ -15,9 +15,15 @@ export class TrouverstageComponent implements OnInit {
   ngOnInit(): void {
 
     this.OffreService.getOffre()
-    .subscribe(
-      data => this.lesoffres = data
-    )
+      .subscribe(
+        (data: any) => {
+          this.lesoffres = data.offres;
+          console.log(this.lesoffres);
+        },
+        error => {
+          console.log('Une erreur s\'est produite lors de la récupération des stagiaires : ', error);
+        }
+      );
   }
 
 }

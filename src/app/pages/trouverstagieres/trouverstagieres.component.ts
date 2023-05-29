@@ -9,15 +9,19 @@ import { StagiaireService } from 'src/app/services/stagiaire.service';
 })
 export class TrouverstagieresComponent implements OnInit {
 
-  lesstagiaire:Stagiaire[]=[];
+  lesstagiaires:Stagiaire[]=[];
   constructor(private stagiaireService:StagiaireService) { }
 
   ngOnInit(): void {
     this.stagiaireService.getStagiaire()
-    .subscribe(
-      data => this.lesstagiaire = data
-    )
+      .subscribe(
+        (data: any) => {
+          this.lesstagiaires = data.etudiant_stagiaires;
+          console.log(this.lesstagiaires);
+        },
+        error => {
+          console.log('Une erreur s\'est produite lors de la récupération des stagiaires : ', error);
+        }
+      );
   }
-  }
-
-
+}

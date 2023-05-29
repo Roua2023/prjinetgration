@@ -1,27 +1,24 @@
 
-<div>
+<div class="body">
 	
 	
     <div class="header">
 		
 				
-        <h1 style="color: aliceblue;">Developpeur Front-End</h1>
-        <h2 style="color: aliceblue;">Focus</h2>
-        <p style="color: aliceblue;">El ghazela</p>
+        <h2 style="color: aliceblue;">{{selectedoffre.Titre}}</h2>
+      
 			
 	
     </div>
-	
-	</div>
-<div class="body">
+<div class="body2">
 <div class="container mt-4">
 	<div class="row mb-5">
 		<div class="col-md-8">
 			<div class="row">
 				<div class="col-md-12 mb-4">
-					<img alt="" class="img-thumbnail p-0 border-0" src="assets/images/focus.png" id="imgetp"/>
+					<img alt="" class="img-thumbnail p-0 border-0"  id="imgetp"/>
 				</div>
-
+<!--[src]="selectedoffre.logo"-->
 			</div>
 		</div>
 		<div class="col-md-4">
@@ -40,7 +37,7 @@
 						
 						
 						<li class="list-group-item pl-0 pr-0">
-							<p class="m-0 h2">Salaire: 350000 of Month </p>
+							<p class="m-0 h2">{{selectedoffre.Salaire}}</p>
 							
 						</li>
 						
@@ -58,13 +55,13 @@
 				</li>
 			
 				<li class="nav-item"  role="presentation">
-					<a class="nav-link lead " role="tab" data-bs-toggle="tab" data-bs-target="#tabFaq">Admissiblité</a>
+					<a class="nav-link lead " role="tab" data-bs-toggle="tab" data-bs-target="#tabFaq">Admissibilité</a>
 				</li>
 				<li class="nav-item"  role="presentation">
-					<a class="nav-link lead " role="tab" data-bs-toggle="tab" data-bs-target="#tabVideo">processus</a>
+					<a class="nav-link lead " role="tab" data-bs-toggle="tab" data-bs-target="#tabVideo">Processus</a>
 				</li>
 				<li class="nav-item"  role="presentation">
-					<a class="nav-link lead " role="tab" data-bs-toggle="tab" data-bs-target="#tabBlog">logistique</a>
+					<a class="nav-link lead " role="tab" data-bs-toggle="tab" data-bs-target="#tabBlog">Logistique</a>
 				</li>
 				
 			</ul>
@@ -75,11 +72,7 @@
 				</div>
 				<div class="tab-pane pt-4" role="tabpanel" id="tabSpecification">
 					<ul>
-						<li>Ingénieur en Informatique</li>
-
-							<li>Une expérience d'au moins 3 ans dans le développement Orienté Objet est exigée.</li> 
-							<li> Bonne maîtrise de la programmation orientée objet</li>
-								<li> Connaissance en Webservices est très appréciée</li>
+						{{selectedoffre.RoleCondidat}}
 							
 					</ul>
 				</div>
@@ -91,9 +84,7 @@
 							<div id="collapseOne" class="collapse show" data-parent="#accordionExample">
 								<div class="card-body">
 									<ul>
-									<li>Compréhension des concepts avancés de l'orienté objet.</li>
-									<li>Maîtrise des langages de programmation orientés objet (JAVA, J2EE, .Net, PHP,C++,C#)</li>
-									<li>Collaboration et travail d'équipe.</li>
+										{{selectedoffre.Admissibilite}}
 								</ul>
 							</div>
 							
@@ -130,9 +121,9 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="card">
-								<img class="card-img-top" src="https://via.placeholder.com/100x100" alt="">
+								<img class="card-img-top" src="../../../assets/images/etape1.png" alt="">
 								<div class="card-body">
-									Une fois que vous nous avez envoyé votre curriculum vitae par courriel, nous vous envoyons un courriel avec un formulaire. Cela fait partie du processus de présélection.
+									{{selectedoffre.Prossesus}}
 								</div>
 								<div class="card-footer">
 									<p class="card-text"><a href="#">Next=></a></p>
@@ -141,7 +132,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="card">
-								<img class="card-img-top" src="https://via.placeholder.com/200x200" alt="">
+								<img class="card-img-top" src="../../../assets/images/etape2.png" alt="">
 								<div class="card-body">
 								Un entretien  avec les ressources humaines (RH).
 								<br><br><br><br>
@@ -153,7 +144,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="card">
-								<img class="card-img-top" src="https://via.placeholder.com/200x200" alt="">
+								<img class="card-img-top" src="../../../assets/images/etape3.png" alt="">
 								<div class="card-body">
 									Un entretien  face à un opérationnel.
 									<br>
@@ -167,7 +158,7 @@
 						</div>
 						<div class="col-md-3">
 							<div class="card">
-								<img class="card-img-top" src="https://via.placeholder.com/200x200" alt="">
+								<img class="card-img-top" src="../../../assets/images/etape4.png" alt="">
 								<div class="card-body">
 								Le bilan et le suivi de l'entretien
 								</div>
@@ -193,19 +184,20 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col-md-3">
-											<i class="fa-solid fa-car-building"></i>
-											<p class="h5">Transport<br/><small class="text-muted"></small></p>
+											<i class="fa-solid fa-truck-fast fa-beat-fade fa-2xl"></i>
+											<p class="h5">{{selectedoffre.Logistique}}<br/><small class="text-muted"></small></p>
 										</div>
 										<div class="col-md-3">
-											<i class="fa-solid fa-house-user fa-bounce fa-2xl"></i>
-											 <p class="h5">Logement<br/><small class="text-muted"></small></p>
+											<i class="fa-solid fa-house fa-beat-fade fa-2xl"></i>
+											<p class="h5">Logement<br/><small class="text-muted"></small></p>
 										</div>
 										<div class="col-md-3">
-											<i class="fa-duotone fa-laptop fa-bounce fa-2xl"></i>
+											<i class="fa-solid fa-laptop-slash fa-beat-fade fa-2xl"></i>											
 											<p class="h5">Ordinateur Portable<br/><small class="text-muted"></small></p>
 										</div>
 										<div class="col-md-3">
-											<i class="fa-solid fa-block-question fa-bounce fa-2xl"></i>
+											<i class="fa-solid fa-block-question fa-beat-fade fa-2xl"></i>
+											
 											<p class="h5">Aide 24/7 <br/><small class="text-muted">Nous répondons aux questions tout le temps</small></p>
 										</div>
 									</div>

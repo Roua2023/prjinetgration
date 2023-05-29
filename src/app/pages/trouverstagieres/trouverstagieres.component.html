@@ -1,28 +1,29 @@
 <div class="body">
-    <div class="header">
-      <div style="margin-top: 5%;">
-        <div class="d-flex justify-content-center m-4">
-          <h1>Trouver <strong>Stagerie</strong></h1>
-      </div>
-      </div>
-    </div>
-    <div  style="height: 50px;margin-top: 5%;">
-      <div class="card">
-        <div class="card-header">
-          <h2>Nom Prenom</h2>
-          <p>Software Engineer</p>
-        </div>
-        <div class="card-body">
-          <p class="location">Adresse</p>
-          <p class="salary">type Etudiant / diplome </p>
-          <p class="description">(lettre motivation)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at imperdiet massa. Vivamus varius ante euismod, consequat lorem vel, dapibus eros. Aenean vel velit libero. </p>
-          <ul class="requirements">
-            <li>(expzerience)5+ years of experience</li>
-            <li>(degre)Bachelor's degree in Computer Science or related field</li>
-          </ul>
-          <a class="btn" href="#">DetailsStagerie</a>
-        </div>
+  <div class="header">
+    <div style="margin-top: 5%;">
+      <div class="d-flex justify-content-center m-4">
+        <h1>Trouver <strong>Stagiaire</strong></h1>
       </div>
     </div>
+  </div>
+   
+  <div class="cardcontainer">
+    <div class="card" *ngFor="let stagiaire of lesstagiaires">
+      <div class="card-header">
+        <h2>{{ stagiaire.Nom }}</h2>
+        <p>{{ stagiaire.Prenom }}</p>
+      </div>
+      <div class="card-body">
+        <p class="location">{{ stagiaire.Adresse }}</p>
+        <p class="salary">{{stagiaire.Email}}</p>
+        
+        <ul class="requirements">
+          <li>(CV) </li>
+          <li>(Lettre de  motivation) </li>
+        </ul>
+        <a class="btn" href="#">Details Stagiaire</a>
+      </div>
+    </div>
+  
+  </div>
 </div>
-{{lesstagiaire|json}}

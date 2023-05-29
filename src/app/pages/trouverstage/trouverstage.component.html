@@ -2,30 +2,26 @@
 
 <div class="body">
   <div class="header">
-    <div style="margin-top: 5%;">
+    <div style="margin-top: 5%">
       <div class="d-flex justify-content-center m-4">
         <h1>Trouver <strong>Stage || Offre</strong></h1>
       </div>
     </div>
   </div>
-  <!-- style="height: 50px;" -->
-  <div  style="height: 50px;margin-top: 5%;" >
-    <div class=" card" >
+ 
+  <div  class="cardcontainer" >
+    <div class="card" *ngFor="let offre of lesoffres" >
       <div class="card-header">
-        <h2>Titre de l'offre</h2>
+        <h2>{{offre.Titre}}</h2>
       </div>
       <div class="card-body">
-        <p class="price">Role condidat</p>
-        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at imperdiet massa. Vivamus varius ante euismod, consequat lorem vel, dapibus eros. Aenean vel velit libero. </p>
-        <ul class="features">
-          <li>salaire Dinar</li>
-          <li>Date Publication</li>
-        </ul>
-        <a class="btn" href="#">Buy Now</a>
+        <p class="price">{{offre.DatePublication| date:'yyyy-MM-dd' }}</p>
+        <p class="description">...</p>
+        
+        <a class="btn" [routerLink]="['/details-offre', offre.id]">Details Offre</a>
       </div>
     </div>
   </div>
 </div>
 
 
-  {{lesoffres|json}}

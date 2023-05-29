@@ -12,9 +12,16 @@ import { DetailsoffreComponent } from './components/detailsoffre/detailsoffre.co
 import { EtudiantDiplomeComponent } from './pages/etudiant-diplome/etudiant-diplome.component';
 import { SocieteComponent } from './pages/societe/societe.component';
 import { AjouteroffreComponent } from './components/ajouteroffre/ajouteroffre.component';
-import { EtudiantdiplomeComponent } from './components/etudiantdiplome/etudiantdiplome.component';
-import { EtudiantstagiairComponent } from './components/etudiantstagiair/etudiantstagiair.component';
 import { NavComponent } from './components/nav/nav.component';
+import { InscripEtudiantSTComponent } from './components/inscrip-etudiant-st/inscrip-etudiant-st.component';
+import { InscripEtudiantDipComponent } from './components/inscrip-etudiant-dip/inscrip-etudiant-dip.component';
+import { InscripSCComponent } from './components/inscrip-sc/inscrip-sc.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ConseilsComponent } from './pages/conseils/conseils.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './pages/login/login.component';
+import { Error404Component } from './pages/error404/error404.component';
+import { CarousselbootComponent } from './components/carousselboot/carousselboot.component';
 
 
 @NgModule({
@@ -28,14 +35,23 @@ import { NavComponent } from './components/nav/nav.component';
     EtudiantDiplomeComponent,
     SocieteComponent,
     AjouteroffreComponent,
-    EtudiantdiplomeComponent,
-    EtudiantstagiairComponent,
-    NavComponent
+    NavComponent,
+    InscripEtudiantSTComponent,
+    InscripEtudiantDipComponent,
+  
+    InscripSCComponent,
+        FooterComponent,
+        ConseilsComponent,
+        LoginComponent,
+        Error404Component,
+        CarousselbootComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
