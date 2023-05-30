@@ -13,6 +13,9 @@ export class StagiaireService {
   getStagiaire():Observable<any>{
     return this.http.get<any>(URL);
   }
+  getstagById(id:number):Observable<Stagiaire>{
+    return this.http.get<Stagiaire>(URL+"/"+ id);
+  }
   addStagiaire(d:Stagiaire):Observable<Stagiaire>{
     return this.http.post<Stagiaire>(URL, d)
   }

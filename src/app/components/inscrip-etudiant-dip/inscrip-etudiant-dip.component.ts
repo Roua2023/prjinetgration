@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { EtudiantDiplomeService } from 'src/app/services/etudiant-diplome.service';
 
 @Component({
   selector: 'app-inscrip-etudiant-dip',
@@ -8,20 +10,25 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 })
 export class InscripEtudiantDipComponent implements OnInit {
   etudiantDiplomeForm !: FormGroup;
-  constructor(private fb : FormBuilder) { }
+  selectedFileName: string = '';
+
+  constructor(private fb : FormBuilder,private router:Router,private etdipserv:EtudiantDiplomeService) { }
 
   ngOnInit(): void {
     this.etudiantDiplomeForm= this.fb.group({
       Nom:['',[Validators.required, Validators.minLength(3),Validators.pattern('^[A-Z][a-zA-Z]+$')]],
       Prenom:['',[Validators.required, Validators.minLength(3),Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      Email :['',[Validators.required, Validators.pattern('^[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+.[a-zA-Z.]{2,15}$'),Validators.pattern('^[A-Z][a-zA-Z]+$')] ],
-      Adresse : ['', [Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      Lettre : ['', [Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      CV: ['', [Validators.required, this.fileTypeValidator(['pdf', 'doc', 'docx','png','jpg'])]],
-      diplome : ['', [Validators.required, this.fileTypeValidator(['pdf', 'doc', 'docx','png','jpg'])]]
+      Email :['',[Validators.required,Validators.email] ],
+      Adresse : ['', [Validators.required]],
+      Lettre : ['', [Validators.required]],
+      CV: ['', [Validators.required]],
+      diplome : ['', [Validators.required]],
+      role:['etd'],
+      password:['',Validators.required,Validators.minLength(6)],
+      Type:['']
     })
   }
-  fileTypeValidator(allowedTypes: string[]) {
+ /* fileTypeValidator(allowedTypes: string[]) {
     return (control: AbstractControl): ValidationErrors | null => {
       const file = control.value;
       if (file) {
@@ -33,7 +40,29 @@ export class InscripEtudiantDipComponent implements OnInit {
       return null;
     };
   }
+*/
+handleFileInput(event: any) {
+  const files: FileList = event.target.files;
+  if (files && files.length > 0) {
+    const file: File = files[0];
+    this.selectedFileName = file.name;
 
+    const reader = new FileReader();
+    reader.onload = () => {
+      // Faites ce que vous devez faire avec reader.result
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+onAjouterOffre(){
+  this.etdipserv.addDiplome(this.etudiantDiplomeForm.value)
+  .subscribe(
+    data => this.router.navigate(['/trouverstagieres'])
+  )
+  console.log(this.etudiantDiplomeForm.value);
+  
+}
   public get nom(){
     return this.etudiantDiplomeForm.get('Nom');
   }
@@ -54,5 +83,9 @@ export class InscripEtudiantDipComponent implements OnInit {
   }
   public get diplome(){
     return this.etudiantDiplomeForm.get('diplome');
+  }
+
+  public get password(){
+    return this.etudiantDiplomeForm.get('password');
   }
 }

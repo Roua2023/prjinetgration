@@ -5,5 +5,5 @@ export class Societe {
         public Email:string,
         public Adresse:string,
         public Activite:string,
-        public Logo:string){}
+        public Logo:string,public password:String,public role:string){}
 }

@@ -15,6 +15,9 @@ import { InscripEtudiantSTComponent } from './components/inscrip-etudiant-st/ins
 import { InscripEtudiantDipComponent } from './components/inscrip-etudiant-dip/inscrip-etudiant-dip.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { CarousselbootComponent } from './components/carousselboot/carousselboot.component';
+import { DetailsstagieresComponent } from './components/detailsstagieres/detailsstagieres.component';
+import { TrouveremployeComponent } from './pages/trouveremploye/trouveremploye.component';
+import { DashboardscComponent } from './pages/dashboardsc/dashboardsc.component';
 
 const routes: Routes = [
 
@@ -22,8 +25,10 @@ const routes: Routes = [
   {path:'acceuil',component:AcceuilComponent},
   {path:'trouverstage',component:TrouverstageComponent},
   {path:'trouverstagieres',component:TrouverstagieresComponent},
+  {path:'trouveremploye',component:TrouveremployeComponent},
   {path:'aboutus',component:AboutusComponent},
   { path: 'details-offre/:id', component:DetailsoffreComponent },
+  { path: 'detailsstagieres/:id', component:DetailsstagieresComponent },
   {path:'trouveremploye',component:EtudiantDiplomeComponent},
   {path:'entreprise',component:SocieteComponent},
   {path:'ajouteroffre',component:AjouteroffreComponent},
@@ -32,8 +37,10 @@ const routes: Routes = [
   {path:'inscripsc',component:InscripSCComponent},
   {path:'inscripets',component:InscripEtudiantSTComponent},
   {path:'inscripedip',component:InscripEtudiantDipComponent},
-  {path:'carousselboot',component:CarousselbootComponent},
+  {path:'dashsociete',component:DashboardscComponent},
+  
   { path:'**', component:Error404Component}
+  
 
 
 

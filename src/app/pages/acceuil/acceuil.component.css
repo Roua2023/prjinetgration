@@ -1,4 +1,44 @@
+#wrapper{
+	padding:1.25%;
+	margin-left: 75%;
+	/* justify-content: space-around; */
+	display: flex;
+	align-items: center;
+}
+.login{
+	/* background-color: aqua; */
+	/* width: 100%; */
+	margin-left: 40%;
+	margin-bottom: 20%;
+}
 
+
+
+
+option[disabled] {
+	color: #888;
+}
+
+.login a{
+	display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: blue;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+.login a :hover{
+	background-color: #FFA000;
+}
+/* 
+.btn{
+	border-radius: 20px;
+	width: 80%;
+} */
 
 
 body {
@@ -12,6 +52,7 @@ body {
 	background-image: url(../../../assets/images/tooplate_body.jpg);
 	background-repeat: repeat-x;
 	background-position: top;	
+	/* overflow: hidden; */
 }
 
 
@@ -95,6 +136,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 	padding: 4px; 
 	background: #000; 
 	margin-bottom: 5px; 
+	
 }
 
 .image_fl { 
@@ -544,3 +586,14 @@ margin-top: 15px;
 	width: 200px;
 	margin-left: 15%;
 }
+
+#video-background{
+	border-radius:5px ;
+	z-index: -1;
+    filter: brightness(50%);
+	margin-top: 3%;
+	margin-left: 8%;
+	margin-bottom: 3%;
+}
+
+ 

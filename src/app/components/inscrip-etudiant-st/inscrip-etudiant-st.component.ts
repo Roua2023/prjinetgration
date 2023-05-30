@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 import { StagiaireService } from 'src/app/services/stagiaire.service';
 
 
@@ -13,7 +14,7 @@ export class InscripEtudiantSTComponent implements OnInit {
   etudiantStagiereForm !: FormGroup;
   selectedFileName: string = '';
   Type:String[]=["Sélectionnez un type de stage","Initiation","Perfectionnement","PFE","Facultatif"];
-  constructor(private fb : FormBuilder,private servstag:StagiaireService,private router:Router) { }
+  constructor(private fb : FormBuilder,private servstag:StagiaireService,private auth:AuthService,private router:Router) { }
 
   ngOnInit(): void {
     this.etudiantStagiereForm= this.fb.nonNullable.group({
@@ -23,7 +24,9 @@ export class InscripEtudiantSTComponent implements OnInit {
       Email :['',[Validators.email] ],
       Adresse : ['', [Validators.required]],
       Lettre : ['', [Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      CV: ['']
+      CV: [''],
+      password:['',Validators.required],
+      role: [this.auth.role]
     })
   }
   
@@ -79,6 +82,9 @@ export class InscripEtudiantSTComponent implements OnInit {
   }
   public get email(){
     return this.etudiantStagiereForm.get('Email');
+  }
+  public get password(){
+    return this.etudiantStagiereForm.get('password');
   }
 
 

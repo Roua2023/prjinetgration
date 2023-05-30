@@ -15,6 +15,7 @@ http://www.tooplate.com/view/2040-blue-arc
 <body>
 
 <div id="tooplate_wrapper">
+   
 	
 	<!-- <div id="tooplate_menu"> 
         <ul>
@@ -25,6 +26,8 @@ http://www.tooplate.com/view/2040-blue-arc
             <li class="last"><a href="/aboutus">About Us</a></li>
         </ul>    	
     </div> end of tooplate_menu -->
+  
+<!-- 
     <div class="liste">
         <select class="custom-select form-select-lg mb-5" [(ngModel)]="typeInscription" (click)="select()">
           <option value="default" selected  disabled>S'inscrire en tant qu'</option>
@@ -32,27 +35,29 @@ http://www.tooplate.com/view/2040-blue-arc
           <option value="etudiantDiplome">Étudiant diplômé</option>
           <option value="societe">Société</option>
         </select>
-      </div>
-      
+      </div> -->
+ 
       <div id="tooplate_middle">
     	<div id="mid_title">
         	Bienvenue sur `Lancez votre carrière`!
         </div>
         <p> Notre plateforme est dédiée à vous aider à trouver des opportunités de stages et d'emploi pour propulser votre carrière vers de nouveaux sommets.</p>
+        <div class="login" >
+            <a href="/login" class="btn btn-primary">commencez maintenant!</a>
+        </div>
     </div> <!-- end of middle -->
      
 	
     <!-- end of header -->
     
     
-    <div id="tooplate_header">
+    <div id="tooplate_header" >
         <!--<app-carousselboot></app-carousselboot>-->
-          <!-- <img src="images/tooplate_bc_blue.png" alt="Image" /> -->  
-          <video src="../../../assets/images/course-video.mp4" autoplay loop muted></video>
-          
-          
+          <!-- <img src="images/tooplate_bc_blue.png" alt="Image" /> -->    
+          <!-- <video autoplay loop muted plays-inline class="back-video" src="../../../assets/images/course-video.mp4">
+        </video>    -->
     </div> 
-    <div id="tooplate_main">
+    <div id="tooplate_main"  class="content" >
     	<div class="col_w960">
               <div class="col_allw300 frontpage_box">
                     <!--<img src="images/tooplate_bc_blue.png" alt="Image" />-->
@@ -83,6 +88,7 @@ http://www.tooplate.com/view/2040-blue-arc
                         <a style="margin-left: 25%;" class="more" routerLink="/inscripets">Infos</a>
                     </div>
                 </div>
+            
                 <div class="col_allw300 frontpage_box col_last">
                      <!--<img src="images/tooplate_bc_orange.png" alt="Image" />-->
                      <div class="inscrit">
@@ -99,7 +105,7 @@ http://www.tooplate.com/view/2040-blue-arc
                 </div>
                 <div class="cleaner"></div>
             </div>
-            
+          
             <div class="col_w960 col_last">
             
             	<div class="col_w450 lp_box float_l">
@@ -145,7 +151,7 @@ http://www.tooplate.com/view/2040-blue-arc
             </div>
         
     </div> <!-- end of main -->
-    
+   
 </div> <!-- end of wrapper -->
 <!--
 <div id="tooplate_footer_wrapper">
@@ -154,6 +160,11 @@ http://www.tooplate.com/view/2040-blue-arc
         Copyright © 2048 <a href="#">Lvc.tn</a> 
     </div>  end of tooplate_footer 
 </div>-->
-
+<div style="width: 100%;">
+    <video id="video-background" autoplay loop muted plays-inline>
+        <source src="../../../assets/images/course-video.mp4" type="video/mp4">
+       
+    </video>
+</div>
 </body>
 </html>

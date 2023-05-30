@@ -6,5 +6,7 @@ export class Stagiaire {
         public Adresse:string,
         public Prenom:string,
         public CV:string,
-        public Lettre:string,){}
+        public Lettre:string,
+        public password:string,
+        public role:string){}
 }

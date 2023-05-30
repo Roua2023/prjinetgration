@@ -7,5 +7,6 @@ export class EtudiantDiplome {
         public Prenom:string,
         public CV:string,
         public Lettre:string,
-        public diplome:string){}
+        public diplome:string,
+        public password:String){}
 }

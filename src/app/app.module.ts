@@ -22,6 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './pages/login/login.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { CarousselbootComponent } from './components/carousselboot/carousselboot.component';
+import { DetailsstagieresComponent } from './components/detailsstagieres/detailsstagieres.component';
+import { TrouveremployeComponent } from './pages/trouveremploye/trouveremploye.component';
+import { DashboardscComponent } from './pages/dashboardsc/dashboardsc.component';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { CarousselbootComponent } from './components/carousselboot/carousselboot
         ConseilsComponent,
         LoginComponent,
         Error404Component,
-        CarousselbootComponent
+        CarousselbootComponent,
+        DetailsstagieresComponent,
+        TrouveremployeComponent,
+        DashboardscComponent
   ],
   imports: [
     BrowserModule,

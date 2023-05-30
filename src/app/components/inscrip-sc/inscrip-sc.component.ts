@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SocieteService } from 'src/app/services/societe.service';
 
 @Component({
   selector: 'app-inscrip-sc',
@@ -8,19 +10,25 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators }
 })
 export class InscripSCComponent implements OnInit {
   inscriSocieteForm !: FormGroup;
-  constructor(private fb : FormBuilder) { }
+  selectedFileName: string = '';
+  constructor(private fb : FormBuilder,private scserv:SocieteService,private router:Router) { }
 
   ngOnInit(): void {
     this.inscriSocieteForm = this.fb.nonNullable.group({
       Nom:['',[Validators.required, Validators.minLength(3),Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      Activite:['',[Validators.required, Validators.minLength(3),Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      Email :['',[Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}$'),Validators.pattern('^[A-Z][a-zA-Z]+$')] ],
-      Adresse : ['', [Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      Lettre : ['', [Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
-      Logo: ['', [Validators.required, this.fileTypeValidator(['pdf', 'doc', 'docx','png','jpg'])]]
+      Activite:['',[Validators.required, Validators.minLength(3)]],
+      Email :['',[Validators.required, Validators.email] ],
+      Adresse : ['', [Validators.required]],
+      Lettre : ['', [Validators.required]],
+      Logo: ['', [Validators.required]],
+      password:['',Validators.required],
+      role: ['sc'],
+      Type:['']
+
+
     })
   }
-  fileTypeValidator(allowedTypes: string[]) {
+  /*fileTypeValidator(allowedTypes: string[]) {
     return (control: AbstractControl): ValidationErrors | null => {
       const file = control.value;
       if (file) {
@@ -31,8 +39,29 @@ export class InscripSCComponent implements OnInit {
       }
       return null;
     };
+  }*/
+  handleFileInput(event: any) {
+    const files: FileList = event.target.files;
+    if (files && files.length > 0) {
+      const file: File = files[0];
+      this.selectedFileName = file.name;
+  
+      const reader = new FileReader();
+      reader.onload = () => {
+        // Faites ce que vous devez faire avec reader.result
+      };
+      reader.readAsDataURL(file);
+    }
   }
-
+  
+  onAjouterOffre(){
+    this.scserv.addSociete(this.inscriSocieteForm.value)
+    .subscribe(
+      data => this.router.navigate(['/entreprise'])
+    )
+    console.log(this.inscriSocieteForm.value);
+    
+  }
   public get nom(){
     return this.inscriSocieteForm.get('Nom');
   }
@@ -48,5 +77,10 @@ export class InscripSCComponent implements OnInit {
   public get email(){
     return this.inscriSocieteForm.get('Email');
   }
-
+public get password(){
+    return this.inscriSocieteForm.get('password');
+  }
+  public get Logo(){
+    return this.inscriSocieteForm.get('Logo');
+  }
 }
